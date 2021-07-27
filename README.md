@@ -1,1 +1,154 @@
-# Trabajo_Clase_04
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRABAJO 21/07/2021</title>
+    <style>
+      * {
+        margin: 0;
+        width: 100%;
+        box-sizing: content-box;
+      }
+
+      label {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      #input-email,
+      #input-new-pass,
+      #input-old-pass,
+      #input-btn {
+        margin: 2px;
+        width: 200px;
+      }
+
+      #input-btn {
+        height: 40px;
+        width: 330px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .main-header {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        height: 100px;
+        background-color: rgb(94, 94, 94);
+      }
+
+      .main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 650px;
+        background-color: rgb(179, 179, 179);
+      }
+
+      #div-form {
+        width: 90%;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+      }
+
+      #login-form {
+        width: 350px;
+        height: 200px;
+        background-color: gray;
+        border-radius: 5px;
+      }
+
+      .main-footer {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        height: 100px;
+        background-color: rgb(94, 94, 94);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="main-header">
+      <h1 id="titulo">Curso Javascript Master</h1>
+    </header>
+
+    <main class="main-container">
+      <div id="div-form">
+        <form id="login-form">
+          <label>
+            Email Address
+            <input
+              type="text"
+              id="input-email"
+              placeholder="example@example.com" /></label
+          ><br />
+          <label> Enter Password<input type="text" id="input-new-pass" /></label
+          ><br />
+          <label
+            >Confirm Password<input type="text" id="input-old-pass" /></label
+          ><br />
+          <!--<input type="button" value="Send" onclick="validEntry()" id="input-btn"/>-->
+          <input type="button" value="Send" id="input-btn"/>
+        </form>
+      </div>
+    </main>
+
+    <footer class="main-footer">
+      <p>Trabajos de Felipe Araneda</p>
+    </footer>
+
+    <!-- Code JavaScript -->
+    <script>
+      // Escucha eventos Click
+      document.getElementById('input-btn').addEventListener('click',validEntry);
+      // Función de Validación
+      function validEntry() {
+        // Seleciona elementos del DOM
+        const newEmail = document.getElementById("input-email");
+        const newPass = document.getElementById("input-new-pass");
+        const oldPass = document.getElementById("input-old-pass");
+        // Variable con Caracteres validos para Email
+        const emailValidate = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        // Carga Valores para evaluar
+        valueNewEmail = newEmail.value;
+        valueNewPass = newPass.value;
+        valueOldPass = oldPass.value;
+        // Bloque de Condición con Validaciones
+        if (valueNewEmail === "") {
+          window.alert("Enter Email");
+          return false;
+        } else if (!emailValidate.test(valueNewEmail)) {
+          window.alert("Invalid email");
+          return false;
+        } else if (valueNewPass === "") {
+          window.alert("Enter Password");
+          return false;
+        } else if (valueNewPass.length < 8) {
+          window.alert("Password must be at least 8 characters");
+          return false;
+        } else if (valueOldPass === "") {
+          window.alert("Enter Confirm Password");
+          return false;
+        } else if (valueOldPass.length < 8) {
+          window.alert("Password confirmation must be at least 8 characters long");
+          return false;
+        } else {
+          if (valueNewPass != valueOldPass) {
+            window.alert("Password confirmation does not match");
+            return false;
+          } else {
+            window.alert("Congratulations account created");
+            return true;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
