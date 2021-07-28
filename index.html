@@ -123,28 +123,38 @@
         // Bloque de Condición con Validaciones
         if (valueNewEmail === "") {
           window.alert("Enter Email");
+          newEmail.style.borderColor = 'red';
           return false;
         } else if (!emailValidate.test(valueNewEmail)) {
           window.alert("Invalid email");
+          newEmail.style.borderColor = 'red';
           return false;
         } else if (valueNewPass === "") {
           window.alert("Enter Password");
+          newPass.style.borderColor = 'red';
           return false;
         } else if (valueNewPass.length < 8) {
           window.alert("Password must be at least 8 characters");
+          newPass.style.borderColor = 'red';
           return false;
         } else if (valueOldPass === "") {
           window.alert("Enter Confirm Password");
+          oldPass.style.borderColor = 'red';
           return false;
         } else if (valueOldPass.length < 8) {
           window.alert("Password confirmation must be at least 8 characters long");
+          oldPass.style.borderColor = 'red';
           return false;
         } else {
           if (valueNewPass != valueOldPass) {
             window.alert("Password confirmation does not match");
+            oldPass.style.borderColor = 'red';
             return false;
           } else {
             window.alert("Congratulations account created");
+            newEmail.style.borderColor = 'green';
+            newPass.style.borderColor = 'green';
+            oldPass.style.borderColor = 'green';
             return true;
           }
         }
