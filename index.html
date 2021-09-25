@@ -1,447 +1,438 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!--<link rel="stylesheet" href="style.css">-->
     <style>
-        * {
-            width: 100%;
-            margin: 0;
-            box-sizing: content-box;
+      * {
+        width: 100%;
+        margin: 0;
+        box-sizing: content-box;
+      }
 
-        }
+      header,
+      footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 200px;
+        background-color: white;
+        /*border: solid 1px black;*/
+      }
 
-        header,
-        footer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            width: 100%;
-            height: 200px;
-            background-color: white;
-            /*border: solid 1px black;*/
-        }
+      main {
+        display: flex;
+        flex-direction: row-reverse;
+      }
 
-        main {
-            display: flex;
-            flex-direction: row-reverse;
-        }
+      aside {
+        width: 35%;
+        height: auto;
+        background-color: rgb(236, 236, 236);
+        flex-wrap: wrap;
+      }
 
-        aside {
-            width: 35%;
-            height: auto;
-            background-color: rgb(236, 236, 236);
-            flex-wrap: wrap;
-        }
+      input {
+        width: 80%;
+        margin: 0;
+        padding: 0;
+      }
 
-        input {
-            width: 80%;
-            margin: 0;
-            padding: 0;
-        }
+      button {
+        width: 200px;
+        margin: 0;
+        padding: 0;
+      }
 
-        button {
-            width: 200px;
-            margin: 0;
-            padding: 0;
-        }
+      img {
+        width: 260px;
+      }
 
-        img {
-            width: 260px;
-        }
+      #div-login {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+      }
 
+      #div-session,
+      #div-form-login,
+      #form-login {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+      }
 
-        #div-login {
-            width: 100%;
-            height: 300px;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-content: center;
-            align-items: center;
+      .clase-productos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
 
-        }
+      .product {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        margin: 10px;
+        width: 480px;
+        background-color: rgb(236, 236, 236);
+      }
 
-        #div-session,
-        #div-form-login,
-        #form-login {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            align-content: center;
-            text-align: center;
-        }
+      #form-cart {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+      }
 
-        .clase-productos {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-        }
+      #div-information {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+      }
 
-        .product {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            align-content: center;
-            text-align: center;
-            margin: 10px;
-            width: 480px;
-            background-color: rgb(236, 236, 236);
-        }
+      li {
+        list-style: none;
+      }
 
-        #form-cart {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-content: center;
-            align-items: center;
-
-        }
-
-        #div-information {
-            width: 100%;
-            height: 200px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            align-content: center;
-            text-align: center;
-        }
-
-        li {
-            list-style: none;
-        }
-
-        p {
-            text-align: center;
-        }
+      p {
+        text-align: center;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>Proyecto Final Javascript Master</h1>
+      <h1>Proyecto Final Javascript Master</h1>
     </header>
     <main>
-        <aside>
-            <div id="div-login">
-                <div id="div-form-login">
-                    <form method="POST" id="form-login">
-                        <h2>Inicie Sesión</h2>
-                        <input type="email" name="" id='user-name'>
-                        <input type="password" name="" id='user-pass'>
-                        <input type="submit" value="Ingresar">
-                    </form>
-                </div>
-                <div id="div-session">
-                    <h2>Conectado <a id="loggedUser" href="#"></a> </h2>
-                    <input type="submit" value="Cerrar Session" onclick="logout()">
-                </div>
-            </div>
-
-            <div id="div-cart">
-                <h2 id="title-carro">Carro de Compras</h2>
-                <form method="POST" id="form-cart">
-                    <div id="cart"></div>
-                    <button type="submit" class="my-button" id="btn-buy">Realizar Compra</button>
-                </form>
-            </div>
-
-            <div id="div-information">
-                <h2>Información Ingreso</h2>
-                <ul>
-                    <li>user: user@escalab.cl</li>
-                    <li>pass: 123</li>
-                </ul>
-
-                <button type="submit"  id="btn-restore" onclick="restore()">Restaurar
-                    Productos</button>
-            </div>
-
-        </aside>
-
-        <div id="contenedor-productos">
-            <div class="clase-productos" id="products"></div>
+      <aside>
+        <div id="div-login">
+          <div id="div-form-login">
+            <form method="POST" id="form-login">
+              <h2>Inicie Sesión</h2>
+              <input type="email" name="" id="user-name" />
+              <input type="password" name="" id="user-pass" />
+              <input type="submit" value="Ingresar" />
+            </form>
+          </div>
+          <div id="div-session">
+            <h2>Conectado <a id="loggedUser" href="#"></a></h2>
+            <input type="submit" value="Cerrar Session" onclick="logout()" />
+          </div>
         </div>
 
+        <div id="div-cart">
+          <h2 id="title-carro">Carro de Compras</h2>
+          <form method="POST" id="form-cart">
+            <div id="cart"></div>
+            <button type="submit" class="my-button" id="btn-buy">
+              Realizar Compra
+            </button>
+          </form>
+        </div>
+
+        <div id="div-information">
+          <h2>Información Ingreso</h2>
+          <ul>
+            <li>user: user@escalab.cl</li>
+            <li>pass: 123</li>
+          </ul>
+
+          <button type="submit" id="btn-restore" onclick="restore()">
+            Restaurar Productos
+          </button>
+        </div>
+      </aside>
+
+      <div id="contenedor-productos">
+        <div class="clase-productos" id="products"></div>
+      </div>
     </main>
     <footer>
-        <h1>Realizado por Felipe Araneda</h1>
+      <h1>Realizado por Felipe Araneda</h1>
     </footer>
     <!--<script src="javascript.js"></script>-->
     <script>
-        class Product {
-            constructor(id, name, price, stock) {
-                this.id = id;
-                this.name = name;
-                this.price = price;
-                this.stock = stock;
-                this.image =
-                    "https://www.rockandpop.cl/wp-content/uploads/2017/04/13-TIRO-DE-GRACIA.jpg";
-            }
+      class Product {
+        constructor(id, name, price, stock) {
+          this.id = id;
+          this.name = name;
+          this.price = price;
+          this.stock = stock;
+          this.image =
+            "https://www.rockandpop.cl/wp-content/uploads/2017/04/13-TIRO-DE-GRACIA.jpg";
+        }
+      }
+
+      class ProductCart {
+        constructor(id, image, name, price, units) {
+          this.id = id;
+          this.image = image;
+          this.name = name;
+          this.price = price;
+          this.units = units;
+        }
+      }
+
+      class Cart {
+        constructor(totalProducts = 0, tax = 0, total = 0, dolar = 780) {
+          this.totalProducts = totalProducts;
+          this.tax = tax;
+          this.total = total;
+          this.dolar = dolar;
+          this.products = [];
         }
 
-        class ProductCart {
-            constructor(id, image, name, price, units) {
-                this.id = id;
-                this.image = image;
-                this.name = name;
-                this.price = price;
-                this.units = units;
-            }
-        }
+        addProduct = (product) => {
+          const { id, image, name, price } = product;
 
-        class Cart {
-            constructor(totalProducts = 0, tax = 0, total = 0, dolar = 780) {
-                this.totalProducts = totalProducts;
-                this.tax = tax;
-                this.total = total;
-                this.dolar = dolar;
-                this.products = [];
-            }
+          const prd = this.products.filter((p) => p.id === id);
 
-            addProduct = (product) => {
-                const {
-                    id,
-                    image,
-                    name,
-                    price
-                } = product;
-
-                const prd = this.products.filter((p) => p.id === id);
-
-                if (prd.length != 0) {
-                    this.products.forEach((p) => {
-                        if (p.id === id) {
-                            p.units += 1;
-                        }
-                    });
-                } else {
-                    this.products.push(new ProductCart(id, image, name, price, 1));
-                    this.tax += 0;
-                }
-
-                this.total += price;
-            };
-        }
-
-        const myLoginForm = document.getElementById("form-login");
-        const formCart = document.getElementById("form-cart");
-        const cart = new Cart(0, 2, 0, 780);
-        const products = [];
-
-
-        async function purchaseMessage() {
-            await new Promise((resolve) => setTimeout(resolve, 3000));
-
-            const buttons = document.querySelectorAll('button.btn-buy');
-            buttons.forEach(btn => btn.disabled = false);
-            clearDiv(divCart);
-
-            const p = document.createElement('p');
-            p.innerText = 'Gracias por tu compra';
-            divCart.appendChild(p);
-            localStorage.removeItem('cart');
-
-            products.forEach(p => p.incart = 0);
-            drawProducts();
-            localStorage.setItem('products', JSON.stringify(products));
-
-        }
-
-        function submitCart(event) {
-            event.preventDefault();
-            const buttons = document.querySelectorAll('button.btn-buy');
-            buttons.forEach(btn => btn.disabled = true);
-            clearDiv(divCart);
-            document.getElementById("btn-buy").style = "display: none;";
-            const p = document.createElement('p');
-            p.innerText = 'Ingresando Compra .....';
-            divCart.appendChild(p);
-            purchaseMessage();
-        }
-
-        formCart.addEventListener("submit", submitCart);
-
-        function initProducts(n) {
-            for (let i = 1; i <= n; i++) {
-                products.push(
-                    new Product(
-                        i,
-                        `Compact Disc ${i}`,
-                        Math.floor(Math.random() * 40000) + 2000,
-                        Math.floor(Math.random() * 2) + 1
-                    )
-                );
-            }
-        }
-
-        const divProducts = document.getElementById("products");
-        const divCart = document.getElementById("cart");
-
-        function createDivProduct(prd) {
-            const div = document.createElement("div");
-            const h3 = document.createElement("h4");
-            const h1 = document.createElement("h1");
-            const p = document.createElement("p");
-            const img = document.createElement("img");
-            const button = document.createElement("button");
-
-            div.className = "product";
-            h3.innerText = prd.name;
-            h1.innerText = `$ ${Intl.NumberFormat("de-DE").format(prd.price)}`;
-            p.innerText = `Disponible ${prd.stock} Unidades`;
-            button.innerHTML = "Agregar al Carro";
-            button.className = "my-button";
-
-            button.onclick = function () {
-                products.forEach((p) => {
-                    if (p.id === prd.id) {
-                        if (p.stock === 0) {
-                            alert(`${p.name} Producto Sin Disponibilidad!`);
-                        } else {
-                            p.stock -= 1;
-                            cart.addProduct(prd);
-                            showCart();
-                        }
-                    }
-                });
-                drawProducts();
-            };
-            img.src = prd.image;
-            div.appendChild(img);
-            div.appendChild(p);
-            div.appendChild(h1);
-            div.appendChild(h3);
-            div.appendChild(button);
-            return div;
-        }
-
-        function clearDiv(div) {
-            while (div.firstChild) {
-                div.removeChild(div.lastChild);
-            }
-        }
-
-        function drawProducts() {
-            clearDiv(divProducts);
-            products.map((prd) => {
-                divProducts.appendChild(createDivProduct(prd));
+          if (prd.length != 0) {
+            this.products.forEach((p) => {
+              if (p.id === id) {
+                p.units += 1;
+              }
             });
-        }
+          } else {
+            this.products.push(new ProductCart(id, image, name, price, 1));
+            this.tax += 0;
+          }
 
-        function createDivProductCart(prd) {
-            const div = document.createElement("div");
-            const p = document.createElement("p");
-            const img = document.createElement("img");
-            img.src = prd.image;
-            img.style = "float:left; width:50px; height:50px";
-            p.innerHTML = `${prd.name} <br/>`;
-            p.innerHTML += `$ ${Intl.NumberFormat("de-DE").format(prd.price)} <br/>`;
-            p.innerHTML += `${prd.units} unidad <br/><br/><br/>`;
+          this.total += price;
+        };
+      }
 
-            div.appendChild(img);
-            div.appendChild(p);
+      const myLoginForm = document.getElementById("form-login");
+      const formCart = document.getElementById("form-cart");
+      const cart = new Cart(0, 2, 0, 780);
+      const products = [];
 
-            return div;
-        }
+      async function purchaseMessage() {
+          
+        await new Promise((resolve) => setTimeout(resolve, 3000));
 
-        function showCart() {
-            clearDiv(divCart);
+        const buttons = document.querySelectorAll("button.btn-buy");
+        buttons.forEach((btn) => (btn.disabled = false));
+        clearDiv(divCart);
 
-            const p = document.createElement("p");
+        const p = document.createElement("p");
+        p.innerText = "Gracias por tu compra";
+        divCart.appendChild(p);
+        localStorage.removeItem("cart");
 
-            if (cart.products.length === 0) {
-                divCart.appendChild(p);
-            } else {
-                cart.products.map((prd) => {
-                    divCart.appendChild(createDivProductCart(prd));
-                });
-
-                p.innerHTML = `Total de Productos $ ${Intl.NumberFormat("de-DE").format(
-      cart.total
-    )} <br/>`;
-                p.innerHTML += `Envío $ ${Intl.NumberFormat("de-DE").format(
-      cart.tax * cart.dolar
-    )} <br/>`;
-                p.innerHTML += `Total Pagado $ ${Intl.NumberFormat("de-DE").format(
-      cart.total + cart.tax * cart.dolar
-    )}`;
-                p.style = "text-align:right";
-
-                divCart.appendChild(p);
-            }
-        }
-
-        function restore() {
-            sessionStorage.clear();
-            localStorage.clear();
-            location.reload();
-        }
-
-        function validUser(event) {
-            event.preventDefault();
-            const userName = document.getElementById("user-name");
-            const passUser = document.getElementById("user-pass");
-
-            if (userName.value == "user@escalab.cl" && passUser.value == 123) {
-                sessionStorage.setItem("user", JSON.stringify(userName.value));
-                validSession();
-            } else {
-                userName.style = "border:1px solid red;";
-                passUser.style = "border:1px solid red;";
-                window.alert("Usuario o Clave no es correcta");
-            }
-        }
-
-        myLoginForm.addEventListener("submit", validUser);
-
-        function logout() {
-            sessionStorage.clear();
-            location.reload();
-        }
-
-        function validSession() {
-            const userSession = sessionStorage.getItem("user");
-
-            if (userSession !== null) {
-                document.getElementById("div-session").style.display = "inline";
-                document.getElementById("form-login").style.display = "none";
-                document.getElementById("loggedUser").innerText = userSession;
-                document.getElementById("btn-buy").style = "display: inline;";
-            } else {
-                document.getElementById("form-login").style.display = "inline";
-                document.getElementById("div-session").style.display = "none";
-            }
-        }
-
-        function stylePage() {
-            document.getElementById("div-session").style = "display: none;";
-            document.getElementById("btn-buy").style = "display: none;";
-            document.getElementById("div-cart").style = "height: auto;";
-            document.getElementById("div-cart").style = "flex-direction: column;";
-            document.getElementById("div-cart").style = "justify-content: center;";
-            document.getElementById("title-carro").style = "text-align: center;";
-
-        }
-
-
-        stylePage();
-        initProducts(6);
+        products.forEach((p) => (p.incart = 0));
         drawProducts();
-        showCart();
+        localStorage.setItem("products", JSON.stringify(products));
+          
+      }
+
+      function submitCart(event) {
+        event.preventDefault();
+        const buttons = document.querySelectorAll("button.btn-buy");
+        buttons.forEach((btn) => (btn.disabled = true));
+        clearDiv(divCart);
+        document.getElementById("btn-buy").style = "display: none;";
+        const p = document.createElement("p");
+        p.innerText = "Ingresando Compra .....";
+        divCart.appendChild(p);
+        purchaseMessage();
+      }
+
+      formCart.addEventListener("submit", submitCart);
+
+      function initProducts(n) {
+        for (let i = 1; i <= n; i++) {
+          products.push(
+            new Product(
+              i,
+              `Compact Disc ${i}`,
+              Math.floor(Math.random() * 40000) + 2000,
+              Math.floor(Math.random() * 2) + 1
+            )
+          );
+        }
+      }
+
+      const divProducts = document.getElementById("products");
+      const divCart = document.getElementById("cart");
+
+      function createDivProduct(prd) {
+          
+        const div = document.createElement("div");
+        const h3 = document.createElement("h4");
+        const h1 = document.createElement("h1");
+        const p = document.createElement("p");
+        const img = document.createElement("img");
+        const button = document.createElement("button");
+
+        div.className = "product";
+        h3.innerText = prd.name;
+        h1.innerText = `$ ${Intl.NumberFormat("de-DE").format(prd.price)}`;
+        p.innerText = `Disponible ${prd.stock} Unidades`;
+        button.innerHTML = "Agregar al Carro";
+        button.className = "my-button";
+
+        button.onclick = function () {
+          products.forEach((p) => {
+            if (p.id === prd.id) {
+              if (p.stock === 0) {
+                alert(`${p.name} Producto Sin Disponibilidad!`);
+              } else {
+                p.stock -= 1;
+                cart.addProduct(prd);
+                showCart();
+              }
+            }
+          });
+          drawProducts();
+        };
+        img.src = prd.image;
+        div.appendChild(img);
+        div.appendChild(p);
+        div.appendChild(h1);
+        div.appendChild(h3);
+        div.appendChild(button);
+        return div;
+      }
+
+      function clearDiv(div) {
+        while (div.firstChild) {
+          div.removeChild(div.lastChild);
+        }
+      }
+
+      function drawProducts() {
+        clearDiv(divProducts);
+        products.map((prd) => {
+          divProducts.appendChild(createDivProduct(prd));
+        });
+      }
+
+      function createDivProductCart(prd) {
+
+        const div = document.createElement("div");
+        const p = document.createElement("p");
+        const img = document.createElement("img");
+        img.src = prd.image;
+        img.style = "float:left; width:50px; height:50px";
+        p.innerHTML = `${prd.name} <br/>`;
+        p.innerHTML += `$ ${Intl.NumberFormat("de-DE").format(
+          prd.price
+        )} <br/>`;
+        p.innerHTML += `${prd.units} unidad <br/><br/><br/>`;
+
+        div.appendChild(img);
+        div.appendChild(p);
+
+        return div;
+      }
+
+      function showCart() {
+        clearDiv(divCart);
+
+        const p = document.createElement("p");
+
+        if (cart.products.length === 0) {
+          divCart.appendChild(p);
+        } else {
+          cart.products.map((prd) => {
+            divCart.appendChild(createDivProductCart(prd));
+          });
+
+          p.innerHTML = `Total de Productos $ ${Intl.NumberFormat(
+            "de-DE"
+          ).format(cart.total)} <br/>`;
+          p.innerHTML += `Envío $ ${Intl.NumberFormat("de-DE").format(
+            cart.tax * cart.dolar
+          )} <br/>`;
+          p.innerHTML += `Total Pagado $ ${Intl.NumberFormat("de-DE").format(
+            cart.total + cart.tax * cart.dolar
+          )}`;
+          p.style = "text-align:right";
+
+          divCart.appendChild(p);
+        }
+      }
+
+      function restore() {
+        sessionStorage.clear();
+        localStorage.clear();
+        location.reload();
+      }
+
+      function validUser(event) {
+        event.preventDefault();
+        const userName = document.getElementById("user-name");
+        const passUser = document.getElementById("user-pass");
+
+        if (userName.value == "user@escalab.cl" && passUser.value == 123) {
+          sessionStorage.setItem("user", JSON.stringify(userName.value));
+          validSession();
+        } else {
+          userName.style = "border:1px solid red;";
+          passUser.style = "border:1px solid red;";
+          window.alert("Usuario o Clave no es correcta");
+        }
+      }
+
+      myLoginForm.addEventListener("submit", validUser);
+
+      function logout() {
+        sessionStorage.clear();
+        location.reload();
+      }
+
+      function validSession() {
+        const userSession = sessionStorage.getItem("user");
+
+        if (userSession !== null) {
+          document.getElementById("div-session").style.display = "inline";
+          document.getElementById("form-login").style.display = "none";
+          document.getElementById("loggedUser").innerText = userSession;
+          document.getElementById("btn-buy").style = "display: inline;";
+        } else {
+          document.getElementById("form-login").style.display = "inline";
+          document.getElementById("div-session").style.display = "none";
+        }
+      }
+
+      function stylePage() {
+        document.getElementById("div-session").style = "display: none;";
+        document.getElementById("btn-buy").style = "display: none;";
+        document.getElementById("div-cart").style = "height: auto;";
+        document.getElementById("div-cart").style = "flex-direction: column;";
+        document.getElementById("div-cart").style = "justify-content: center;";
+        document.getElementById("title-carro").style = "text-align: center;";
+      }
+
+      stylePage();
+      initProducts(6);
+      drawProducts();
+      showCart();
         
     </script>
-
-</body>
-
+  </body>
 </html>
